@@ -988,3 +988,239 @@ This ensures the Employment Network (EaaS) remains:
 - fraud‑resistant  
 - community‑powered  
 - outcome‑aligned  
+
+
+# Platform Integrity & Anti‑Tampering Protections
+## Protecting Against Hunters Manipulating the System
+
+## 1. Overview
+Because Job Hunters contribute real code, data, and operational work to the JobHunter07 ecosystem, the platform must be protected against intentional or accidental manipulation. This includes attempts to alter data, modify platform behavior, or influence Employment Insurance eligibility, Work Profiles, or certification outcomes.
+
+The system must assume that:
+- some contributors will attempt to exploit access  
+- some will try to manipulate their own records  
+- some will attempt to bypass certification  
+- some will try to alter matching or hiring outcomes  
+- some may introduce malicious or harmful code  
+
+This section defines the guardrails, policies, and technical controls required to ensure platform integrity.
+
+---
+
+## 2. Zero‑Trust Contribution Model
+All contributions — code, data, tasks, moderation, or operational work — must be treated as **untrusted** until validated.
+
+### 2.1 No Direct Access to Production
+- Hunters never touch production systems  
+- All work is done in isolated sandboxes  
+- All changes require review and automated checks  
+- No one can modify live data directly  
+
+### 2.2 Role‑Based Access Control (RBAC)
+- Hunters only see what they need  
+- No access to sensitive data  
+- No access to other workers’ profiles  
+- No access to Employment Insurance logic  
+- No access to matching algorithms  
+
+### 2.3 Principle of Least Privilege
+Every permission is:
+- minimal  
+- temporary  
+- revocable  
+- monitored  
+
+---
+
+## 3. Code Contribution Guardrails
+
+### 3.1 Mandatory Code Review
+All code must be reviewed by:
+- a certified maintainer  
+- automated static analysis  
+- automated security scanners  
+- dependency vulnerability scanners  
+
+Hunters cannot approve their own PRs.
+
+### 3.2 Automated Static Analysis
+Detects:
+- backdoors  
+- privilege escalation  
+- data manipulation  
+- unauthorized API calls  
+- suspicious logic  
+- hardcoded credentials  
+- attempts to bypass validation  
+
+### 3.3 Immutable Audit Logs
+Every change is logged:
+- who made it  
+- when  
+- what files changed  
+- what data was touched  
+- what systems were affected  
+
+Logs cannot be altered by contributors.
+
+### 3.4 No Direct Database Access
+Hunters never write SQL or touch databases directly.  
+All data access goes through:
+- validated APIs  
+- permission‑checked endpoints  
+- rate‑limited interfaces  
+
+---
+
+## 4. Data Integrity Guardrails
+
+### 4.1 Write‑Protected Fields
+Hunters cannot modify:
+- their own Work Profile  
+- their own performance metrics  
+- their own certification status  
+- their own Employment Insurance eligibility  
+- their own WorkOS history  
+
+These fields are **system‑controlled only**.
+
+### 4.2 Multi‑Source Verification
+Critical data is validated by:
+- WorkOS signals  
+- manager reviews  
+- team surveys  
+- certification results  
+- Employment Graph patterns  
+
+No single source can alter important data.
+
+### 4.3 Tamper‑Evident Records
+All Work Profile entries include:
+- cryptographic signatures  
+- timestamps  
+- source identifiers  
+- verification hashes  
+
+Any modification attempt is immediately flagged.
+
+---
+
+## 5. Behavioral Monitoring & Anomaly Detection
+
+### 5.1 Suspicious Behavior Detection
+The system monitors:
+- unusual task patterns  
+- sudden skill inflation  
+- attempts to bypass workflows  
+- repeated failed access attempts  
+- abnormal code submissions  
+- attempts to access restricted areas  
+
+### 5.2 Automated Lockouts
+If suspicious behavior is detected:
+- account is temporarily locked  
+- benefits are paused  
+- certification is frozen  
+- manual review is triggered  
+
+### 5.3 Reputation & Trust Score
+Every Hunter has a dynamic trust score based on:
+- code quality  
+- task completion  
+- peer reviews  
+- WorkOS activity  
+- anomaly detection signals  
+
+Low trust = reduced permissions.
+
+---
+
+## 6. Certification Integrity Protections
+
+### 6.1 No Self‑Certification
+Hunters cannot:
+- approve their own work  
+- review their own tasks  
+- influence their own certification  
+
+### 6.2 Real‑Work Validation
+Elite Hunter Certification requires:
+- real contributions  
+- real code reviews  
+- real operational tasks  
+- real performance signals  
+
+Fake work is impossible.
+
+### 6.3 Multi‑Reviewer Model
+Certification decisions require:
+- automated checks  
+- maintainer review  
+- system verification  
+- Employment Graph consistency  
+
+---
+
+## 7. Employment Insurance Anti‑Fraud Protections
+
+### 7.1 No Work = No Benefits
+If a Hunter stops contributing:
+- weekly payments stop  
+- billing remains paused  
+- account enters review  
+
+### 7.2 No Manipulation of Unemployment Status
+Hunters cannot:
+- mark themselves unemployed  
+- alter WorkOS signals  
+- bypass employment verification  
+
+### 7.3 Cross‑System Validation
+Unemployment eligibility is confirmed by:
+- WorkOS  
+- Certification  
+- Employment Graph  
+- Company signals  
+
+---
+
+## 8. Platform‑Level Safeguards
+
+### 8.1 Immutable System Logic
+Critical systems are:
+- write‑protected  
+- version‑locked  
+- checksum‑verified  
+- monitored for tampering  
+
+### 8.2 Canary Deployments
+All changes go through:
+- sandbox  
+- staging  
+- canary  
+- production  
+
+### 8.3 Automated Rollback
+If anomalies are detected:
+- deployment halts  
+- system rolls back  
+- alerts are triggered  
+
+---
+
+## 9. Summary
+These guardrails ensure that:
+- Hunters cannot manipulate the system  
+- Hunters cannot alter their own data  
+- Hunters cannot cheat Employment Insurance  
+- Hunters cannot tamper with matching algorithms  
+- Hunters cannot introduce malicious code  
+- Hunters cannot bypass certification  
+- Hunters cannot exploit WorkOS signals  
+
+The system remains:
+- secure  
+- fair  
+- tamper‑proof  
+- trustworthy  
+- resilient  
